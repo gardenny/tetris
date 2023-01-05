@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TETRIS</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico" />
+    <script src="https://kit.fontawesome.com/f506734a62.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="js/tetris.js" type="module"></script>
+  </head>
+  <body>
+    <section class="start">
+      <div class="start__title">
+        <span style="color: #e40026">T</span>
+        <span style="color: #e56200">E</span>
+        <span style="color: #e4de00">T</span>
+        <span style="color: #00e426">R</span>
+        <span style="color: #004ee4">I</span>
+        <span style="color: #9c13e4">S</span>
+      </div>
+      <p class="start__guide">&lt; press enter key or click button to start &gt;</p>
+      <button class="start__btn">&gt;&gt; START</button>
+    </section>
+
+    <section class="game">
+      <h1 class="game__title">TETRIS</h1>
+      <div class="game__field">
+        <div class="game__tetris">
+          <table class="tetris"></table>
+        </div>
+        <div class="game__info">
+          <div class="info">
+            <div class="info__title">SCORE</div>
+            <div class="info__detail score">0</div>
+          </div>
+          <div class="info">
+            <div class="info__title">TIME</div>
+            <div class="info__detail time">00:00</div>
+          </div>
+          <div class="info">
+            <div class="info__title">HELP</div>
+            <div class="info__detail help">
+              <div class="help--arrow">◀ ▼ ▶</div>
+              <div class="help--space">space</div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info__title">MENU</div>
+            <div class="info__detail menu">
+              <button class="btn--home"><i class="fa-solid fa-house"></i></button>
+              <button class="btn--replay"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popup">
+      <h2 class="popup__title">Game<br />Over</h2>
+      <div class="popup__result">
+        <div class="result__score"></div>
+        <div class="result__time"></div>
+      </div>
+      <button class="popup__btn">replay</button>
+    </section>
+  </body>
+</html>
