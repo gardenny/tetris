@@ -127,3 +127,16 @@ function renderBlocks(moveType = '') {
   movingItem.top = top;
   movingItem.direction = direction;
 }
+
+function descendBlock() {
+  downInterval = setInterval(() => moveBlock('top', 1), duration);
+}
+
+function stopDescendBlock() {
+  clearInterval(downInterval);
+}
+
+function moveBlock(moveType, amount) {
+  tempMovingItem[moveType] += amount; // left, top
+  renderBlocks(moveType); // 블럭이 움직일 때만 moveType을 인자로 전달
+}
