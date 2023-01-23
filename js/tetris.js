@@ -188,3 +188,26 @@ function checkMatch() {
   });
   generateNewBlock(); // 블럭이 바닥에 닿으면 고정됨과 동시에 새로운 블럭 생성
 }
+
+// Event handling
+document.addEventListener('keydown', e => {
+  switch (e.key) {
+    case 'ArrowRight':
+      moveBlock('left', 1);
+      break;
+    case 'ArrowLeft':
+      moveBlock('left', -1);
+      break;
+    case 'ArrowDown':
+      moveBlock('top', 1);
+      break;
+    case 'ArrowUp':
+      changeDirection();
+      break;
+    case ' ': // space bar
+      dropBlock();
+      break;
+    default:
+      break;
+  }
+});
