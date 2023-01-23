@@ -211,3 +211,26 @@ document.addEventListener('keydown', e => {
       break;
   }
 });
+
+// Timer
+function startTimer() {
+  gameTimer = setInterval(() => {
+    seconds++;
+    if (seconds > 59) {
+      seconds = 0;
+      minutes++;
+    }
+    updateTimer();
+  }, 1000);
+}
+
+function updateTimer() {
+  const runningTime = document.querySelector('.time');
+  runningTime.innerText = `${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+}
+
+function stopTimer() {
+  clearInterval(gameTimer);
+  minutes = 0;
+  seconds = 0;
+}
