@@ -168,3 +168,23 @@ function seizeBlock() {
   });
   checkMatch();
 }
+
+// 완성된 라인이 있는지 여부를 체크하는 함수
+function checkMatch() {
+  const childNodes = tetrisBoard.childNodes;
+  childNodes.forEach(child => {
+    let matched = true;
+    child.childNodes.forEach(li => {
+      // seized 클래스가 없다는 건 완성된 라인이 없다는 뜻
+      if (!li.classList.contains('seized')) matched = false;
+    });
+    // 완성된 라인이 있다면 해당 라인을 삭제하고 새로운 라인 생성
+    if (matched) {
+      child.remove();
+      prependNewLine();
+      score++;
+      gameScore.innerText = score;
+    }
+  });
+  generateNewBlock(); // 블럭이 바닥에 닿으면 고정됨과 동시에 새로운 블럭 생성
+}
