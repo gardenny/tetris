@@ -257,3 +257,14 @@ function showPopup() {
     init();
   });
 }
+
+// Menu
+gameMenu.addEventListener('click', e => {
+  const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  if (target.className === 'btn--home') {
+    window.location.reload();
+  } else if (target.className === 'btn--replay') {
+    gameOver();
+  }
+  return;
+});
