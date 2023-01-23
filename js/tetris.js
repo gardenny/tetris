@@ -153,3 +153,18 @@ function checkEmpty(target) {
   if (!target || target.classList.contains('seized')) return false;
   return true; // 블럭 이동 가능 여부
 }
+
+function dropBlock() {
+  stopDescendBlock();
+  downInterval = setInterval(() => moveBlock('top', 1), 10);
+}
+
+// 바닥에 닿은 블럭 고정
+function seizeBlock() {
+  const movingBlocks = document.querySelectorAll('.moving');
+  movingBlocks.forEach(moving => {
+    moving.classList.remove('moving');
+    moving.classList.add('seized');
+  });
+  checkMatch();
+}
