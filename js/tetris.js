@@ -234,3 +234,26 @@ function stopTimer() {
   minutes = 0;
   seconds = 0;
 }
+
+function gameOver() {
+  started = false;
+  showPopup();
+  stopDescendBlock();
+  stopTimer();
+}
+
+function showPopup() {
+  const popup = document.querySelector('.popup');
+  const popupBtn = document.querySelector('.popup__btn');
+  const resultScore = document.querySelector('.result__score');
+  const resultTime = document.querySelector('.result__time');
+
+  popup.style.display = 'flex';
+  resultScore.innerText = `score: ${score}`;
+  resultTime.innerText = `time : ${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  popupBtn.addEventListener('click', () => {
+    tetrisBoard.innerHTML = '';
+    popup.style.display = 'none';
+    init();
+  });
+}
