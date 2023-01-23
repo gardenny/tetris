@@ -140,3 +140,16 @@ function moveBlock(moveType, amount) {
   tempMovingItem[moveType] += amount; // left, top
   renderBlocks(moveType); // 블럭이 움직일 때만 moveType을 인자로 전달
 }
+
+// 블럭 방향 변경
+function changeDirection() {
+  const direction = tempMovingItem.direction;
+  direction === 3 ? (tempMovingItem.direction = 0) : (tempMovingItem.direction += 1);
+  renderBlocks();
+}
+
+// 이동 경로 내 여백 체크 함수
+function checkEmpty(target) {
+  if (!target || target.classList.contains('seized')) return false;
+  return true; // 블럭 이동 가능 여부
+}
