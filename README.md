@@ -2,7 +2,7 @@
 
 # 🧱 Tetris
 
-추억의 테트리스 게임 👉 [Demo](https://imjone.github.io/tetris/)
+추억의 테트리스 게임 👉 [Demo](https://gardenny.github.io/tetris/)
 
 <br />
 
@@ -36,7 +36,7 @@
 
 ## 💻 소스 코드
 
-전체 코드 보러 가기 👉 [Notion](https://imjone.notion.site/Tetris-2d36893b850046a882a20f1f0451a029)
+전체 코드 보러 가기 👉 [Notion](https://imjone.notion.site/Tetris-2d36893b850046a882a20f1f0451a029?pvs=4)
 
 ### 📍 블록 배열 정의
 
